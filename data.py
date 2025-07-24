@@ -1,6 +1,7 @@
 info = {
     'first_name': 'Fredy',
     'last_name': 'Curihual',
+    'role': 'admin',
 
     'contact': {
         'email': 'fredy@example.com',

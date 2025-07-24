@@ -5,6 +5,8 @@ from data import info, proyectos
 import dotenv
 import os
 
+from login_form import LoginForm
+
 dotenv.load_dotenv()
 
 app = Flask(__name__)
@@ -61,17 +63,19 @@ def contact():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
 
         if username == ADMIN_USER and password == ADMIN_PASSWORD:
             session['logged_in'] = True
             return redirect(url_for('admin_dashboard'))
         else:
-            return render_template('login.html', error='credenciales incorrectas')
-    else:
-        return render_template('login.html')
+            flash('Credenciales incorrectas', 'danger')
+
+    return render_template('login.html', form=form)
 
 
 @app.route('/admin')

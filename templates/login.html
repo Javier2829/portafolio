@@ -2,26 +2,36 @@
 
 {% block title %}Login{% endblock %}
 
-
 {% block content %}
 <div class="container col-md-4 mt-5">
-    <h2>Iniciar Sesión</h2>
-    {% if error %}
-    <div class="alert alert-danger">{{ error }}</div>
-    {% endif %}
+    <h2>Login</h2>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endwith %}
 
-    <form method="POST">
+    <form method="POST" novalidate>
+        {{ form.hidden_tag() }}
+
         <div class="mb-3">
-            <label>Usuario</label>
-            <input type="text" name="username" class="form-control" required>
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control", placeholder="Usuario") }}
+            {% if form.username.errors %}
+            <div class="text-danger">{{ form.username.errors[0] }}</div>
+            {% endif %}
         </div>
+
         <div class="mb-3">
-            <label>Contraseña</label>
-            <input type="password" name="password" class="form-control" required>
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", placeholder="Contraseña") }}
+            {% if form.password.errors %}
+            <div class="text-danger">{{ form.password.errors[0] }}</div>
+            {% endif %}
         </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+
+        {{ form.submit(class="btn btn-primary") }}
     </form>
 </div>
-
 {% endblock %}

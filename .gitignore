@@ -1,0 +1,9 @@
+.venv/
+.idea/
+*.pyc
+__pycache__/
+instance/
+*.db
+*.sqlite3
+*.log
+*.env

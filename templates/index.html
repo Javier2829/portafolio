@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block title%}
+Fredy Devs
+{%endblock%}
+{%block content%}
+
+<div class="container text-center mt-5">
+    <div class="bg-light d-flex align-items-center justify-content-center vh-100">
+        <div class="card shadow-lg p-4" style="width: 22rem;">
+            <div class="card-body">
+                <img src="{{url_for('static', filename='img/fredy.png')}}" alt="Fredy"
+                    class="card-img-top rounded-circle mx-auto d-block"
+                    style="width: 150px; height: 150px; object-fit: cover;" alt="Perfil">
+                <h3 class="card-title">
+                    {{data['first_name']}} {{data['last_name']}}
+                </h3>
+                <p>{{data['description']}}</p>
+
+            </div>
+            <h2 class="mt-4">Habilidades</h2>
+            <div class="d flex flex-wrap justify-content-center gap-2 mt-3">
+                {% for skill in data['skills'] %}
+                <span class="badge rounded-pill bg-primary fs-6">
+                    {{ skill }}
+                </span>
+                {% endfor %}
+            </div>
+
+
+        </div>
+
+    </div>
+    {%endblock%}

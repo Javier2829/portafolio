@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block title%}
+About
+{%endblock%}
+{%block content%}
+<div class="container align-items-center justify-content-center mt-5 text-center">
+    <h1>Contacto</h1>
+    <div class="container">
+        <ul class="list-group">
+            <a href='#' class="list-group-item list-group-item-action">{{data['contact']['email']}}</a>
+            <a href='#' class="list-group-item list-group-item-action">{{data['contact']['phone']}}</a>
+
+        </ul>
+    </div>
+</div>
+{%endblock%}

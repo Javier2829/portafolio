@@ -4,7 +4,7 @@ info = {
     'role': 'admin',
 
     'contact': {
-        'email': 'fredy@example.com',
+        'email': 'email@example.com',
         'phone': '123-456-7890'
     }, 'description': 'Soy un apasionado del desarrollo de software, con experiencia en la creación de aplicaciones web y móviles. Me gusta aprender nuevas tecnologías y mejorar mis habilidades constantemente.',
     'skills': ['Python', 'Flask', 'HTML', 'CSS', 'Flutter'],

@@ -1,9 +1,58 @@
 body {
-    background-color: #7a7f85;
+    background-color: #E9F1F7;
     font-family: Arial, sans-serif;
+    padding-top: 56px;
+}
+
+.container {
+    background-color: #2274A5;
+    color: rgb(239, 242, 245);
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .navbar {
-    background-color: #343a40;
-    color: aqua;
+    background: hsla(270, 94%, 25%, 1);
+
+    background: linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#42047E", endColorstr="#07F49E", GradientType=1);
+
+}
+
+a.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a.navbar-brand {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbar-brand:hover {
+    color: #2274A5;
+    text-decoration: underline;
+}
+
+.card {
+    background-color: #E9F1F7;
+}
+
+a.nav-link:hover {
+    color: #2274A5;
+    text-decoration: underline;
+}
+
+article {
+    margin: 20px 0;
+    text-align: justify;
+    line-height: 1.6;
+    word-spacing: 2px;
 }
